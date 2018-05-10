@@ -14,7 +14,7 @@ else:
 
 app = Flask(__name__)
 
-
+#this will create an html page for which videos will display
 @app.route('/')
 def index():
     """Video streaming home page."""
@@ -35,6 +35,6 @@ def video_feed():
     return Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-
+#created to we can access an address thourgh our viewer
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True)

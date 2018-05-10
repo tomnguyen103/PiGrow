@@ -46,6 +46,7 @@ temperature = temperature * 9/5.0 + 32
 # Note that sometimes you won't get a reading and
 # the results will be null (because Linux can't
 # guarantee the timing of calls to read the sensor).
+#this temp will read x amount of seconds until user desires.
 # If this happens try again!
 if humidity is not None and temperature is not None:
     print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))

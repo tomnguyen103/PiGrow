@@ -1,16 +1,17 @@
+#your Raspberry Pi is connected to the internet.
+#This is needed to track time.
+#
 import RPi.GPIO as GPIO
+import datetime
 import time
 
+pin = OutPutPin
+GPIO.setup(pin, GPIO.OUT)
 
-GPIO.setwarnings(False)
-# Set the GPIO mode
-GPIO.setmode(GPIO.BCM)
-# Set the LED GPIO number
-FAN = 18
-# Set the LED GPIO pin as an output
-GPIO.setup(FAN, GPIO.OUT)
-# Turn the GPIO pin on
-GPIO.output(FAN,True)
-# Wait 5 seconds
-time.sleep(5)
-# Turn the GPIO pin off
+while True:
+    time = datetime.datetime.now().strftime("%H:%M")
+    if time == "05:00":
+        GPIO.output(pin, True)
+        time.sleep(number_of_seconds_for_led_to_be_on_here)
+        GPIO.output(pin, False)
+    time.sleep(0.030)
